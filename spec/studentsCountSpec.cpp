@@ -28,7 +28,7 @@ namespace spec
 			studentsCount(Arr2, 1, 12, &lessCount, &moreCount);
 			Assert::AreEqual(1, lessCount, L"Single element lessCount 1 case failed.", LINE_INFO());
 			Assert::AreEqual(0, moreCount, L"Single element moreCount 0 case failed.", LINE_INFO());
-			int Arr3[1] = { 111 };
+			int Arr3[1] = { 111 }; 
 			studentsCount(Arr3, 1, 12, &lessCount, &moreCount);
 			Assert::AreEqual(0, lessCount, L"Single element lessCount 0 case failed.", LINE_INFO());
 			Assert::AreEqual(1, moreCount, L"Single element moreCount 1 case failed.", LINE_INFO());
