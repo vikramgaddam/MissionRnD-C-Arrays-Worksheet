@@ -22,5 +22,45 @@ struct student {
 };
 
 struct student ** topKStudents(struct student *students, int len, int K) {
-	return NULL;
+	if (students == NULL)return NULL;
+	if (len <= 0)return NULL;
+	if (K <= 0)return NULL;
+
+	int i, j,position;
+
+	for (i = 0; i < len; i++)
+	{
+		position = i;
+
+		for (j = i + 1; j < len; j++)
+		{
+			if (students[j].score > students[position].score)
+			{
+				position = j;
+			}
+		}
+		if (position != i)
+		{
+
+			struct student temp;
+
+			temp = students[i];
+
+
+			students[i] = students[position];
+
+			students[position] = temp;
+
+
+		}
+	}
+
+	struct student **new_list= (struct student **)malloc(sizeof(struct student)*K);
+
+	for (i = 0; i < K; i++)
+	{
+		new_list[i] = &students[i];
+	}
+	return new_list;
+
 }
